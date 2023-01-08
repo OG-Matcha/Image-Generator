@@ -327,11 +327,6 @@ class DrawingBotWindow(QtWidgets.QMainWindow):
                 self, "Missing Entry", "Please select a size.")
             return
 
-        if not self.format_label.text()[7:]:
-            QtWidgets.QMessageBox.warning(
-                self, "Missing Entry", "Please select a format.")
-            return
-
         # Set the prompt, size in the thread
         self.image_generation_thread.prompt = prompt
         self.image_generation_thread.size = size[6:]
@@ -373,6 +368,10 @@ class DrawingBotWindow(QtWidgets.QMainWindow):
         if not self.image:
             QtWidgets.QMessageBox.warning(
                 self, "No Image", "Please generate an image first.")
+            return
+        if not self.format_label.text()[7:]:
+            QtWidgets.QMessageBox.warning(
+                self, "Missing Entry", "Please select a format.")
             return
 
         # Save the image
