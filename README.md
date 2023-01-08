@@ -24,3 +24,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 * OpenAI for providing the API used in this program
 * PyQt5 for the GUI components
+
+## Example
+<img alt="Example" src="https://github.com/OG-Matcha/Image-Generator/blob/3090735cf0ab252fa38c993239979702e7d750c0/Example.png" style = "width: 30%">
