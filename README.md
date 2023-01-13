@@ -19,7 +19,7 @@ An easy-to-use PyQt5 GUI program that generates images from user prompts using t
 5. Use the Save button to save the generated image to file
  
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/OG-Matcha/Image-Generator/blob/21f963f1f2ad26c73b63ae609a29f451911f4adc/LICENSE) file for details.
 
 ## Acknowledgments
 * OpenAI for providing the API used in this program
