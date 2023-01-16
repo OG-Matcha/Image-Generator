@@ -337,9 +337,6 @@ class DrawingBotWindow(QtWidgets.QMainWindow):
     def warning(self, title, message):
         QtWidgets.QMessageBox.warning(self, title, message)
 
-    def select_api_key(self):
-        return
-
     def show_progress_bar(self):
         # Show the progress bar
         self.progress_bar.setVisible(True)
