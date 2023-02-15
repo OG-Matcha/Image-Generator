@@ -12,7 +12,7 @@ An easy-to-use PyQt5 GUI program that generates images from user prompts using t
 * requests (pip install requests)
 
 ## Usage
-1. You can clone it with https://github.com/OG-Matcha/Image-Generator.git
+1. You can download the [SetUp](https://github.com/OG-Matcha/Image-Generator/blob/193c7afb7c43426762873cdfea51fe8a1de7e32e/Image_Generator_setup.exe) file here
 2. Set up a OpenAI API key by following the instructions at https://beta.openai.com/signup
 3. Launch the program and enter your API key in the Configuration window
 4. Type a prompt in the text field and select for the size and format then click the Generate button to generate an image
