@@ -2,10 +2,21 @@ import openai
 import re
 import requests
 import os
+import sys
 import json
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtGui import QPixmap, QIcon
 from PyQt5.QtCore import QThread, pyqtSignal
+
+
+def resource_path(relative_path):
+    # get absolute path to resources
+    try:
+        base_path = sys._MEIPASS2
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 
 class ConfigWindow(QtWidgets.QDialog):
@@ -14,8 +25,8 @@ class ConfigWindow(QtWidgets.QDialog):
         self.setWindowTitle("Configuration")
 
         # Create a QIcon object from the icon file
-        icon_path = "Icon.ico"
-        icon = QIcon(icon_path)
+        icon_path = "assets\\Icon.ico"
+        icon = QIcon(resource_path(icon_path))
         self.setWindowIcon(icon)
 
         # Create the layout
@@ -46,7 +57,11 @@ class ConfigWindow(QtWidgets.QDialog):
 
         # Save the API key to the config.json file
         config = {"api_key": api_key}
-        with open("config.json", "w") as f:
+
+        if not os.path.exists(resource_path("data")):
+            os.makedirs(resource_path("data"))
+
+        with open(resource_path("data\\config.json"), "a") as f:
             json.dump(config, f)
 
         # Close the configuration window
@@ -129,20 +144,20 @@ class DrawingBotWindow(QtWidgets.QMainWindow):
         self.setMinimumSize(1200, 1300)
 
         # Check for OpenAI API key
-        self.config_path = "config.json"
+        self.config_path = "data\\config.json"
 
-        if not os.path.exists(self.config_path):
+        if not os.path.exists(resource_path(self.config_path)):
             # No configuration file, let the user enter the API key
             self.show_config_window()
         else:
             # Load the API key from the configuration file
-            with open(self.config_path, "r") as f:
+            with open(resource_path(self.config_path), "r") as f:
                 config = json.load(f)
                 openai.api_key = config["api_key"]
 
         # Create a QIcon object from the icon file
-        icon_path = "Icon.ico"
-        icon = QIcon(icon_path)
+        icon_path = "assets\\Icon.ico"
+        icon = QIcon(resource_path(icon_path))
         self.setWindowIcon(icon)
 
         # Create the central widget and layout
