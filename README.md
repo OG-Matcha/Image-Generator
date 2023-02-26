@@ -5,7 +5,7 @@ An easy-to-use PyQt5 GUI program that generates images from user prompts using t
 * Generate images from user prompts using OpenAI's API
 * Save generated images to file
 
-## Requirements
+## Requirements (If you install the application with setup, no requirements needed)
 * Python 3
 * PyQt5
 * openai (pip install openai)
